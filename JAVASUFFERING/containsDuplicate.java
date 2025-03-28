@@ -14,3 +14,44 @@ class Solution {
 
     }
 }
+
+
+//HashSet
+class Solution {
+    public boolean hasDuplicate(int[] nums) {
+        // Use fully qualified class name without import
+        java.util.HashSet<Integer> seen = new java.util.HashSet<>();
+
+        // Iterate through the array
+        for (int num : nums) {
+            // Check if num is already in the set
+            if (seen.contains(num)) {
+                return true; // Duplicate found
+            }
+            // Add num to the set
+            seen.add(num);
+        }
+        
+        // No duplicates found
+        return false;
+    }
+}
+
+//Hashmap
+class Solution {
+    public boolean hasDuplicate(int[] nums) {
+        java.util.HashMap<Integer, Boolean> seen = new HashMap<>();
+
+        // Iterate through the array
+        for (int num : nums) {
+            if (seen.containsKey(num)) {
+                return true; // Duplicate found
+            }
+            // Add num to the map
+            seen.put(num, true);
+        }
+
+        // No duplicates found
+        return false;
+    }
+}
